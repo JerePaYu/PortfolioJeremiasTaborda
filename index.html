@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Jeremías Benjamín Taborda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --primary: #111827;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+            --accent2: #818cf8;
+            --text: #334155;
+            --muted: #64748b;
+            --background: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.8;
+            background-color: var(--background);
+
+            background-image:
+                radial-gradient(circle at 10% 15%, rgba(56,189,248,0.09), transparent 25%),
+                radial-gradient(circle at 90% 45%, rgba(129,140,248,0.08), transparent 25%),
+                linear-gradient(rgba(148,163,184,0.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148,163,184,0.055) 1px, transparent 1px);
+
+            background-size:
+                auto,
+                auto,
+                40px 40px,
+                40px 40px;
+        }
+
+        /* HERO */
+
+        header {
+            position: relative;
+            overflow: hidden;
+            min-height: 490px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(56,189,248,0.28), transparent 40%),
+                radial-gradient(ellipse at 85% 80%, rgba(129,140,248,0.25), transparent 40%),
+                linear-gradient(135deg, #0f172a, #111827 50%, #172554);
+
+            color: white;
+            border-radius: 0 0 55px 55px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+
+            background-size: 45px 45px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(56,189,248,0.2);
+            border-radius: 50%;
+            right: -100px;
+            top: -120px;
+
+            box-shadow:
+                0 0 0 35px rgba(56,189,248,0.03),
+                0 0 0 75px rgba(56,189,248,0.025);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.7rem);
+            line-height: 1.15;
+            letter-spacing: -2px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            background: linear-gradient(90deg, #38bdf8, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-top: 22px;
+        }
+
+        .hero-line {
+            width: 65px;
+            height: 4px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            margin: 28px auto 0;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+
+            width: fit-content;
+            max-width: calc(100% - 30px);
+            margin: -28px auto 35px;
+            padding: 12px 18px;
+
+            background: rgba(15,23,42,0.92);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+
+            box-shadow: 0 12px 35px rgba(15,23,42,0.2);
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            background: rgba(56,189,248,0.17);
+        }
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 65px 30px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: #0284c7;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary);
+            font-size: 2.2rem;
+            letter-spacing: -1px;
+            margin: 5px 0;
+            position: relative;
+            display: table;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 45%;
+            height: 4px;
+            margin-top: 8px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+        }
+
+        h3 {
+            color: #0284c7;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(226,232,240,0.9);
+            border-radius: 25px;
+            padding: 35px;
+
+            box-shadow: 0 10px 35px rgba(15,23,42,0.04);
+            backdrop-filter: blur(8px);
+        }
+
+        /* SKILLS */
+
+        .skills-title {
+            margin-top: 35px;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 9px 20px;
+            border-radius: 12px 22px 12px 22px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 1px solid #bae6fd;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-4px) rotate(-1deg);
+            background: #bae6fd;
+        }
+
+        .skills-category {
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #e2e8f0;
+            border-radius: 15px 25px 15px 25px;
+            padding: 25px;
+            margin-bottom: 18px;
+
+            box-shadow: 0 8px 25px rgba(15,23,42,0.04);
+            transition: 0.3s;
+        }
+
+        .skills-category:hover {
+            transform: translateX(5px);
+            box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+        }
+
+        .skills-category h3 {
+            margin-bottom: 18px;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            position: relative;
+
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
+
+            padding: 35px;
+            border-radius: 15px 30px 15px 30px;
+
+            box-shadow: 0 15px 35px rgba(15,23,42,0.12);
+            overflow: hidden;
+        }
+
+        .education-card::after {
+            content: "EDU";
+            position: absolute;
+            right: 20px;
+            bottom: -35px;
+
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8rem;
+            font-weight: 700;
+
+            color: rgba(255,255,255,0.045);
+            pointer-events: none;
+        }
+
+        .education-card h3 {
+            color: #7dd3fc;
+        }
+
+        .education-card p {
+            color: #cbd5e1;
+        }
+
+        .education-card h2 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .education-tag {
+            display: inline-block;
+
+            background: rgba(56,189,248,0.15);
+            color: #7dd3fc;
+
+            border: 1px solid rgba(56,189,248,0.3);
+            padding: 6px 15px;
+            border-radius: 20px;
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            position: relative;
+
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #e2e8f0;
+
+            border-radius: 12px 28px 12px 28px;
+            padding: 30px;
+            margin-bottom: 22px;
+
+            box-shadow: 0 8px 25px rgba(15,23,42,0.045);
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 5px;
+            height: 100%;
+
+            background: linear-gradient(to bottom, #38bdf8, #818cf8);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(15,23,42,0.09);
+        }
+
+        /* VISUAL GALLERY */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 12px 25px 12px 25px;
+            background: #0f172a;
+
+            min-height: 250px;
+
+            box-shadow: 0 10px 25px rgba(15,23,42,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 35px 20px 20px;
+
+            color: white;
+            background: linear-gradient(transparent, rgba(15,23,42,0.95));
+        }
+
+        .gallery-caption h3 {
+            color: white;
+            margin: 0;
+        }
+
+        .gallery-caption p {
+            color: #cbd5e1;
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+        }
+
+        /* VIDEO */
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            margin-top: 22px;
+
+            border-radius: 18px;
+            overflow: hidden;
+            background: #0f172a;
+
+            box-shadow: 0 12px 30px rgba(15,23,42,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CONTACT */
+
+        .contact-card {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
+
+            padding: 40px;
+            border-radius: 25px 12px 25px 12px;
+
+            box-shadow: 0 15px 40px rgba(15,23,42,0.15);
+        }
+
+        .contact-card h2 {
+            color: white;
+        }
+
+        .contact-card p {
+            color: #cbd5e1;
+        }
+
+        a.contact-link {
+            color: #7dd3fc;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        a.contact-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* DIVIDERS */
+
+        hr.divider {
+            border: 0;
+            height: 1px;
+
+            max-width: 800px;
+            margin: 15px auto;
+
+            background: linear-gradient(90deg, transparent, #94a3b8, transparent);
+            opacity: 0.4;
+        }
+
+        /* FOOTER */
+
+        footer {
+            position: relative;
+            margin-top: 70px;
+
+            padding: 35px 20px;
+            text-align: center;
+
+            background: #0f172a;
+            color: #94a3b8;
+
+            border-radius: 45px 45px 0 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+
+            header {
+                min-height: 400px;
+                padding: 80px 20px;
+                border-radius: 0 0 35px 35px;
+            }
+
+            header h1 {
+                letter-spacing: -1px;
+            }
+
+            nav {
+                gap: 3px;
+                padding: 9px;
+                border-radius: 20px;
+            }
+
+            nav a {
+                font-size: 0.78rem;
+                padding: 7px 9px;
+            }
+
+            section {
+                padding: 45px 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content,
+            .project-card,
+            .contact-card,
+            .education-card {
+                padding: 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 240px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+
+    <header>
+
+        <div class="hero-content">
+
+            <h1>
+                Jeremías Benjamín<br>
+                <span>Taborda.</span>
+            </h1>
+
+            <p>Programming Student | UTN-FRBB</p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#about-me">About Me</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">My Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#tutorials">Video Tutorial</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ABOUT ME -->
+
+    <section id="about-me">
+
+        <div class="section-heading">
+            <span class="section-label">01 / Introduction</span>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                Hello! My name is Jeremías, and I am a student at UTN-FRBB.
+                I like programming, technology and creating 3D games.
+                I've been learning programming for about two and a half years,
+                and I really enjoy learning new things.
+            </p>
+
+            <p>
+                I like programming because I enjoy solving problems,
+                fixing bugs and creating things based on my own ideas.
+                I'm also interested in Artificial Intelligence and how it works.
+                For me, finding and fixing errors is an important part of programming,
+                and I enjoy the challenge of making things work.
+            </p>
+
+            <p>
+                I'm also interested in technology in general, and recently
+                I started learning Linux. Another area that caught my attention
+                is cybersecurity. I'd like to learn more about it and eventually
+                focus my career in that direction.
+            </p>
+
+            <p>
+                Outside of programming, I love music of all kinds
+                and I also play musical instruments.
+            </p>
+
+            <p>
+                I'm always trying to improve my skills, learn new technologies
+                and create new projects. My goal is to keep learning
+                and make things that I can be proud of.
+            </p>
+
+            <h3 class="skills-title">My Tech Stack</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Unity 3D</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Databases</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- TECHNICAL SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+            <span class="section-label">02 / My knowledge</span>
+            <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-category">
+
+            <h3>Programming Languages</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Python</span>
+            </div>
+
+        </div>
+
+        <div class="skills-category">
+
+            <h3>Game Development</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">Unity 3D</span>
+                <span class="skill-tag">Game Mechanics</span>
+                <span class="skill-tag">Enemy AI</span>
+                <span class="skill-tag">Multiplayer Systems</span>
+            </div>
+
+        </div>
+
+        <div class="skills-category">
+
+            <h3>Operating Systems</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Windows</span>
+            </div>
+
+        </div>
+
+        <div class="skills-category">
+
+            <h3>Other Technologies</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">Databases</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Problem Solving</span>
+            </div>
+
+        </div>
+
+        <div class="skills-category">
+
+            <h3>Areas of Interest</h3>
+
+            <div class="skills-grid">
+                <span class="skill-tag">Cybersecurity</span>
+                <span class="skill-tag">Artificial Intelligence</span>
+                <span class="skill-tag">Linux</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-heading">
+            <span class="section-label">03 / Academic background</span>
+            <h2>Education</h2>
+        </div>
+
+        <div class="education-card">
+
+            <span class="education-tag">Currently Studying</span>
+
+            <h3>Universidad Tecnológica Nacional</h3>
+
+            <h2>University Technician in Programming</h2>
+
+            <p>
+                Facultad Regional Bahía Blanca (UTN-FRBB).
+            </p>
+
+            <p>
+                Currently studying programming, software development,
+                object-oriented programming, algorithms and databases.
+                I'm continuously developing my technical knowledge
+                through academic projects and personal practice.
+            </p>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+            <span class="section-label">04 / What I do</span>
+            <h2>My Portfolio Projects</h2>
+        </div>
+
+        <div class="project-card">
+
+            <h3>Current Projects</h3>
+
+            <p>
+                <strong>Right now, I'm working on</strong> a 3D horror game in Unity.
+                I use C# for player movement, and I'm also developing
+                a multiplayer system that allows players to connect in real time.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>Past Projects</h3>
+
+            <p>
+                I haven't worked for a tech company yet, but
+                <strong>I've helped other people</strong> by fixing code
+                and creating scripts. Most of the time, <strong>I've coded</strong>
+                in C# to develop specific systems.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>Future Projects</h3>
+
+            <p>
+                In the future, <strong>I will</strong> learn more about
+                servers and Linux. I'd also like to create new mobile
+                applications using Python, as well as develop programs
+                for PC and continue creating games.
+            </p>
+
+            <p>
+                Another goal of mine is to start learning about
+                <strong>cybersecurity</strong> and explore this field in more depth.
+                I'd like to develop my knowledge in this area and eventually
+                move my career in that direction.
+            </p>
+
+            <p>
+                I'm also interested in learning more about how games work internally,
+                including their modifications and internal files.
+            </p>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- VISUAL GALLERY -->
+
+    <section id="gallery">
+
+        <div class="section-heading">
+            <span class="section-label">05 / My work</span>
+            <h2>Visual Gallery</h2>
+        </div>
+
+        <p>
+            A visual look at some of my programming projects,
+            game development experiments and technical work.
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/unity-game.jpg"
+                    alt="Unity horror game"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <h3>Horror Game</h3>
+                    <p>3D Game Development with Unity</p>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/enemy-ai.jpg"
+                    alt="Mobile application development"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <h3>Mobile Applications</h3>
+                    <p>App Development with C#</p>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/gameplay.jpg"
+                    alt="Linux console"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <h3>Linux Console and Databases</h3>
+                    <p>Linux Commands and Database Management</p>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/programming.jpg"
+                    alt="Programming project"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <h3>Programming</h3>
+                    <p>Software Development and Coding</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- VIDEO TUTORIAL -->
+
+    <section id="tutorials">
+
+        <div class="section-heading">
+            <span class="section-label">06 / Knowledge sharing</span>
+            <h2>Video Tutorial</h2>
+        </div>
+
+        <div class="project-card">
+
+            <h3>How to Fix a Simple IT Problem</h3>
+
+            <p>
+                In this video, I explain how to fix a common coding error in C# using Unity.
+            </p>
+
+            <p>
+                <strong>First</strong>, I read the code and understand what each part does.
+                Then, I look for the error and work on fixing it.
+            </p>
+
+            <div class="video-container">
+
+                <iframe
+                    src="https://www.youtube.com/embed/nLgOVBBWjlQ"
+                    title="How to fix a simple IT problem"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+            <span class="section-label">07 / Get in touch</span>
+            <h2>Contact</h2>
+        </div>
+
+        <div class="contact-card">
+
+            <h2>Let's connect.</h2>
+
+            <p>
+                I'm always open to discussing new ideas.
+                Feel free to reach out!
+            </p>
+
+            <p>
+                📧 Email:
+                <a
+                    href="mailto:tabordajeremiasb@gmail.com"
+                    class="contact-link">
+                    tabordajeremiasb@gmail.com
+                </a>
+            </p>
+
+            <p>
+                💻 GitHub:
+                <a
+                    href="https://github.com/JerePaYu"
+                    class="contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    github.com/JerePaYu
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            <span></span>
+            · © 2026
+        </p>
+
+    </footer>
+
+</body>
+</html>
